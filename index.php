@@ -1,7 +1,7 @@
 <?php defined( '_JEXEC' ) or die; 
 
-include_once JPATH_THEMES.'/'.$this->template.'/logic.php'; // load logic.php
-include_once JPATH_THEMES.'/'.$this->template.'/include/template.php'; // load logic.php
+include_once JPATH_THEMES . '/' . $this->template . '/logic.php'; // load logic.php
+include_once JPATH_THEMES . '/' . $this->template . '/include/template.php'; // load logic.php
 
 // check modules
 $show_menu			= ($this->countModules('menu'));
