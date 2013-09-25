@@ -36,7 +36,7 @@
 		<folder>images</folder>
 		<folder>js</folder>
 		<folder>less</folder>
-		<folder>sass</folder>
+		<folder>include</folder>
 		<filename>component.php</filename>
 		<filename>error.php</filename>
 		<filename>index.php</filename>
