@@ -10,6 +10,13 @@
 defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.
+$last_level_one_id = 0;
+for($j=count($list); $j>0; $j--){
+	if($list[$j]->level == 1){
+		$last_level_one_id = $list[$j]->id;
+		break;
+	}
+}
 $first_start = true;
 ?>
 <?php // The menu class is deprecated. Use nav instead. ?>
@@ -51,15 +58,15 @@ foreach ($list as $i => &$item) :
 		$class .= ' divider';
 	}
 
-	//start first last changes
+	///start first last changes
 	if($first_start){
 		$class .= ' first';
 		$first_start = false;
 	}
-	if ($item->shallower || $item == end($list)) {
+	if ($item->shallower || $item == end($list) || $item->id == $last_level_one_id ) {
 		$class .= ' last';
 	}
-
+	
 	if ($item->deeper)
 	{
 		$class .= ' deeper';
