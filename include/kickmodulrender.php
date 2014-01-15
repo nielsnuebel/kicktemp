@@ -1,5 +1,5 @@
 <?php
-function blankmodul($modul,$style,$bootstrap="12"){
+function kickstartmodul($modul,$style,$bootstrap="12"){
 	$document = JFactory::getDocument();
 	$modules = JModuleHelper::getModules($modul);
 	$renderer = $document->loadRenderer('module');

@@ -14,13 +14,13 @@
 		<p><img src="../templates/kickstart/template_preview.png" /></p>
 		<h2>Module positions</h2>
 		<ol>
-            <li>menu</li>
             <li>logo</li>
+            <li>menu</li>
             <li>top</li>
-            <li>inner-top</li>
             <li>sidebar-a</li>
-            <li>sidebar-b</li>
+            <li>inner-top</li>
             <li>inner-bottom</li>
+            <li>sidebar-b</li>
             <li>bottom</li>
             <li>footer</li>
             <li>debug</li>
@@ -53,8 +53,8 @@
 	</languages>
 	
 	<positions><!-- define the positions for modules here -->
-        <position>menu</position>
         <position>logo</position>
+        <position>menu</position>
         <position>top</position>
         <position>inner-top</position>
         <position>sidebar-a</position>
@@ -218,6 +218,14 @@
                         default=""
                         label="TPL_KICKSTART_PARAMETER_GOOGLEANALYTICS_CODE_LABEL"
                         description="TPL_KICKSTART_PARAMETER_GOOGLEANALYTICS_CODE_DESC"
+                        />
+                <!-- GOOGLE ANALYTICS CODE-->
+                <field  name="googleanalyticsdomain"
+                        class=""
+                        type="text"
+                        default=""
+                        label="TPL_KICKSTART_PARAMETER_GOOGLEANALYTICS_DOMAIN_LABEL"
+                        description="TPL_KICKSTART_PARAMETER_GOOGLEANALYTICS_DOMAIN_DESC"
                         />
 
 				<!-- Disable JavaScript -->

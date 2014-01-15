@@ -21,7 +21,7 @@ function modChrome_mystyle($module, &$params, &$attribs) { ?>
 		</div>
 	</div><?php
 }
-function modChrome_blank($module, &$params, &$attribs){
+function modChrome_kickstartmodul($module, &$params, &$attribs){
 
 	$moduleTag      = $params->get('module_tag', 'div');
 	$headerTag      = htmlspecialchars($params->get('header_tag', 'h3'));
