@@ -75,7 +75,7 @@ if ($this->countModules('sidebar-a') and $this->countModules('sidebar-b')) $cont
 
 <div class="container">
     <?php if ($this->countModules('logo')): ?>
-        <!-- TOP -->
+        <!-- Logo -->
         <div class="row logo">
             <jdoc:include type="modules" name="logo" style="html5"/>
         </div><!-- div.row -->
@@ -169,8 +169,9 @@ if ($this->countModules('sidebar-a') and $this->countModules('sidebar-b')) $cont
     <?php endif;?>
 
     <div class="row copyright">
-        <div class="col-md-12 col-lg-12"><?php echo '&copy; '.date('Y').' - '.$app->getCfg('sitename');?>
+        <div class="col-md-12 col-lg-12"><?php echo '&copy; '.date('Y').' - '.$app->getCfg('sitename');?></div>
     </div><!-- .copyright -->
+</div><!-- .container -->
 
   	<jdoc:include type="modules" name="debug" />
 
