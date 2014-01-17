@@ -8,14 +8,13 @@
  */
 
 defined('_JEXEC') or die;
-
 // Note. It is important to remove spaces between elements.
 $last_level_one_id = 0;
-for($j=count($list); $j>0; $j--){
-	if($list[$j]->level == 1){
-		$last_level_one_id = $list[$j]->id;
-		break;
-	}
+foreach ($list as $menu){
+    if($menu->level == 1) {
+        $last_level_one_id = $menu->id;
+        break;
+    }
 }
 $first_start = true;
 ?>
