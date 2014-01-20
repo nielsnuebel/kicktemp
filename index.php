@@ -129,11 +129,9 @@ if ($this->countModules('sidebar-a') and $this->countModules('sidebar-b')) $cont
 			    <?php endif;?>
 
                 <jdoc:include type="message" />
-                <?php if (!preg_match('/nocontent/',$pageclass)) {?>
-                    <!-- Component Start -->
-                    <jdoc:include type="component" />
-                    <!-- Component End -->
-                <? }?>
+                <!-- Component Start -->
+                <jdoc:include type="component" />
+                <!-- Component End -->
 
                 <?php if ($this->countModules('inner-bottom')): ?>
 				<div class="row inner-bottom">
