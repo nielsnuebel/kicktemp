@@ -12,7 +12,6 @@ $tpath 		= $this->baseurl.'/templates/'.$this->template;
 
 // parameter
 $modernizr 	= $this->params->get('modernizr');
-$cssmethod 	= $this->params->get('cssmethod');
 
 $bootstrap 	= $this->params->get('bootstrap');
 $fontawesome	= $this->params->get('fontawesome');
@@ -73,17 +72,15 @@ $this->setGenerator(null);
 $doc->setMetadata('x-ua-compatible', 'IE=edge,chrome=1');
 
 // add javascripts
-if ($modernizr==1) $doc->addScript($tpath.'/js/modernizr-2.6.2.js');
-if ($bootstrap==1 && JVERSION>='3') :
-  JHtml::_('bootstrap.framework');
-elseif ($bootstrap==1) :
-  $doc->addScript($tpath.'/js/jquery-1.10.2.min.js');
+if ($modernizr==1) $doc->addScript($tpath.'/js/modernizr-2.8.1.js');
+if ($bootstrap==1) :
+  $doc->addScript($tpath.'/js/jquery-1.11.1.min.js');
   $doc->addScript($tpath.'/js/jquery-noconflict.js');
+  $doc->addScript($tpath.'/js/jquery-migrate.min.js');
   $doc->addScript($tpath.'/js/bootstrap.min.js');
 endif;
-if ($jquery==1) $doc->addScript($tpath.'/js/jquery-1.10.2.min.js');
+if ($jquery==1) $doc->addScript($tpath.'/js/jquery-1.11.1.min.js');
 if ($jquery==1 or $bootstrap==1 ) {
-	$doc->addScript($tpath.'/js/jquery-css-transform.js');
 	$doc->addScript($tpath.'/js/script.js');
 }
 
@@ -93,14 +90,17 @@ if (($bootstrap==1 or $jquery==1) and $loadjqueryfirst):
 	if (JVERSION>='3' && $jquery==0) :
 		$jquerypath = $this->baseurl.'/media/jui/js/jquery.min.js';
 	elseif ($bootstrap==1 || $jquery==1) :
-		$jquerypath = $tpath.'/js/jquery-1.10.2.min.js';
+		$jquerypath = $tpath.'/js/jquery-1.11.1.min.js';
 	endif;
 
 	$tmpScripts = array();
 	$tmpScripts = $doc->_scripts;
-	unset( $tmpScripts[$this->baseurl.'/media/cck/scripts/jquery/js/jquery-1.8.3.min.js'] );
 	unset( $tmpScripts[$this->baseurl.'/media/widgetkit/js/jquery.js'] );
-	if ($jquery==1 && JVERSION>='3') unset( $tmpScripts[$this->baseurl.'/media/jui/js/jquery.min.js'] );
+	if ($jquery==1 && JVERSION>='3'){
+		unset( $tmpScripts[$this->baseurl.'/media/jui/js/jquery.min.js'] );
+		unset( $tmpScripts[$this->baseurl.'/media/jui/js/jquery-migrate.min.js'] );
+		unset( $tmpScripts[$this->baseurl.'/media/jui/js/jquery-noconflict.js'] );
+	}
 
 	$neuScript = array();
 	$neuScript[$jquerypath] = $tmpScripts[$jquerypath];
@@ -111,30 +111,18 @@ if (($bootstrap==1 or $jquery==1) and $loadjqueryfirst):
 	$doc->_scripts = $neuScript;
 endif;
 
+//add normalize
+if ($bootstrap==0) $doc->addStyleSheet($tpath.'/css/normalize.css');
 
-// add stylesheets
-if ($cssmethod=='css') : 
-  if ($bootstrap==0) $doc->addStyleSheet($tpath.'/css/normalize.css');
-  if ($bootstrap==1) :
-    $doc->addStyleSheet($tpath.'/css/bootstrap.min.css');
-    if ($fontawesome==1) $doc->addStyleSheet($tpath.'/css/font-awesome.min.css');
-  endif;
-endif;
+//add bootstrap
+if ($bootstrap==1) $doc->addStyleSheet($tpath.'/css/bootstrap.min.css');
+
+//add fontawesome
+if ($fontawesome==1 && $bootstrap==1) $doc->addStyleSheet($tpath.'/css/font-awesome.min.css');
 
 // add google font
 if ($googlefont !='') $doc->addStyleSheet("https://fonts.googleapis.com/css?family=".$googlefont);
 
-// file ending
-if ($cssmethod=='min') : 
-  $ext = '.php'; 
-  $cssmethod = 'css';
-else :
-  $ext = '';
-endif;
-
 // add template sheet
-$doc->addStyleSheet($tpath.'/'.$cssmethod.'/template.css'.$ext.'?b='.$bootstrap.'&amp;fa='.$fontawesome.'&amp;v=1');
-
-
-
+$doc->addStyleSheet($tpath.'/css/template.css');
 ?>

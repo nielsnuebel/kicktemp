@@ -82,18 +82,6 @@
 					<option value="1">JYES</option>
 				</field>
 
-				<!-- CSS METHOD -->
-				<field  name="cssmethod"
-                        type="radio"
-                        class="btn-group"
-                        default="css"
-					    label="TPL_KICKSTART_PARAMETER_CSSMETHOD_LABEL"
-					    description="TPL_KICKSTART_PARAMETER_CSSMETHOD_DESC"
-                        >
-					<option value="css">CSS (default)</option>
-					<option value="min">CSS (minified)</option>
-				</field>
-
 				<!-- BOOTSTRAP -->
 				<field  name="bootstrap"
                         type="radio"
