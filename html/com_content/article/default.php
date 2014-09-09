@@ -33,8 +33,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 }
 ?>
 	<?php if ($params->get('show_title') || $params->get('show_author')) : ?>
-	<div class="page-header">
-		<h2 class="contentheadline">
+		<h1 class="contentheadline">
 			<?php if ($this->item->state == 0) : ?>
 				<span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
 			<?php endif; ?>
@@ -45,8 +44,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 					<?php echo $this->escape($this->item->title); ?>
 				<?php endif; ?>
 			<?php endif; ?>
-		</h2>
-	</div>
+		</h1>
 	<?php endif; ?>
 	<?php if (!$this->print) : ?>
 		<?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>

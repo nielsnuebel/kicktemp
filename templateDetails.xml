@@ -14,6 +14,7 @@
 		<p><img src="../templates/kickstart/template_preview.png" /></p>
 		<h2>Module positions</h2>
 		<ol>
+            <li>onepage</li>
             <li>logo</li>
             <li>menu</li>
             <li>top</li>
@@ -53,8 +54,10 @@
 	</languages>
 	
 	<positions><!-- define the positions for modules here -->
+        <position>onepage</position>
         <position>logo</position>
         <position>menu</position>
+        <position>search</position>
         <position>top</position>
         <position>inner-top</position>
         <position>sidebar-a</position>
@@ -69,6 +72,90 @@
 		<fields name="params">
 
 			<fieldset name="advanced">
+
+                <!-- CODEKIT -->
+                <field  name="codekit"
+                        type="radio"
+                        class="btn-group"
+                        default="0"
+                        label="TPL_KICKSTART_PARAMETER_CODEKIT_LABEL"
+                        description="TPL_KICKSTART_PARAMETER_CODEKIT_DESC"
+                        >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <!-- SHOWSYSTEMOUTPUT -->
+                <field  name="showsystemoutput"
+                        type="radio"
+                        class="btn-group"
+                        default="1"
+                        label="TPL_KICKSTART_PARAMETER_SHOWSYSTEMOUTPUT_LABEL"
+                        description="TPL_KICKSTART_PARAMETER_SHOWSYSTEMOUTPUT_DESC"
+                        >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <!-- SHOWONFRONTPAGE -->
+                <field  name="hidecontentwrapper"
+                        type="radio"
+                        class="btn-group"
+                        default="0"
+                        label="TPL_KICKSTART_PARAMETER_HIDECONTENTWRAPPER_LABEL"
+                        description="TPL_KICKSTART_PARAMETER_HIDECONTENTWRAPPER_DESC"
+                        >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <!-- PAGETYPE -->
+                <field  name="pagetype"
+                        type="radio"
+                        class="btn-group"
+                        default="0"
+                        label="TPL_KICKSTART_PARAMETER_PAGETYPE_LABEL"
+                        description="TPL_KICKSTART_PARAMETER_PAGETYPE_DESC"
+                        >
+                    <option value="onepage">TPL_KICKSTART_PARAMETER_ONEPAGE</option>
+                    <option value="multipage">TPL_KICKSTART_PARAMETER_MULTIPAGE</option>
+                </field>
+
+                <!-- SIDEBAR A -->
+                <field  name="sidebar-a"
+                        class=""
+                        type="text"
+                        default="col-md-4"
+                        label="TPL_KICKSTART_PARAMETER_SIDEBAR_A_LABEL"
+                        description="TPL_KICKSTART_PARAMETER_SIDEBAR_A_DESC"
+                        />
+
+                <!-- SIDEBAR B -->
+                <field  name="sidebar-b"
+                        class=""
+                        type="text"
+                        default="col-md-4"
+                        label="TPL_KICKSTART_PARAMETER_SIDEBAR_B_LABEL"
+                        description="TPL_KICKSTART_PARAMETER_SIDEBAR_B_DESC"
+                        />
+
+                <!-- CONTENT 2 -->
+                <field  name="content-2-col"
+                        class=""
+                        type="text"
+                        default="col-md-8"
+                        label="TPL_KICKSTART_PARAMETER_CONTENT_2_COL_LABEL"
+                        description="TPL_KICKSTART_PARAMETER_CONTENT_2_COL_DESC"
+                        />
+
+                <!-- CONTENT 3 -->
+                <field  name="content-3-col"
+                        class=""
+                        type="text"
+                        default="col-md-4"
+                        label="TPL_KICKSTART_PARAMETER_CONTENT_3_COL_LABEL"
+                        description="TPL_KICKSTART_PARAMETER_CONTENT_3_COL_DESC"
+                        />
 
 				<!-- MODERNIZR-->
 				<field  name="modernizr"
@@ -125,42 +212,6 @@
                         default="0"
 					    label="TPL_KICKSTART_PARAMETER_FONTAWESOME_LABEL"
 					    description="TPL_KICKSTART_PARAMETER_FONTAWESOME_DESC"
-                        >
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-
-				<!-- JQUERY -->
-				<field  name="jquery"
-                        type="radio"
-                        class="btn-group"
-                        default="0"
-					    label="TPL_KICKSTART_PARAMETER_JQUERY_LABEL"
-					    description="TPL_KICKSTART_PARAMETER_JQUERY_DESC"
-                        >
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-
-                <!-- JQUERY FIRST -->
-                <field  name="loadjqueryfirst"
-                        type="radio"
-                        class="btn-group"
-                        default="0"
-                        label="TPL_KICKSTART_PARAMETER_LOADJQUERYFIRST_LABEL"
-                        description="TPL_KICKSTART_PARAMETER_LOADJQUERYFIRST_DESC"
-                        >
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-
-				<!-- PIE-->
-				<field  name="pie"
-                        type="radio"
-                        class="btn-group"
-                        default="0"
-					    label="TPL_KICKSTART_PARAMETER_PIE_LABEL"
-					    description="TPL_KICKSTART_PARAMETER_PIE_DESC"
                         >
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>

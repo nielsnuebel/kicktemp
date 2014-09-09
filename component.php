@@ -5,11 +5,15 @@ $app = JFactory::getApplication();
 $doc = JFactory::getDocument(); 
 $tpath = $this->baseurl.'/templates/'.$this->template;
 
+$input = $app->input;
+
+$print = $input->get('print',0);
 $this->setGenerator(null);
 
 // load sheets and scripts
-$doc->addStyleSheet($tpath.'/css/bootstrap.min.css');
-$doc->addStyleSheet($tpath.'/css/bootstrap-responsive.min.css');
+//$doc->addStyleSheet($tpath.'/css/bootstrap.min.css');
+//$doc->addStyleSheet($tpath.'/css/bootstrap-responsive.min.css');
+$doc->addStyleSheet($tpath.'/css/kickstart.css');
 $doc->addStyleSheet($tpath.'/css/print.css?v=1'); 
 //$doc->addScript($tpath.'/js/modernizr-2.6.2.js');
 
@@ -33,7 +37,7 @@ $doc->addStyleSheet($tpath.'/css/print.css?v=1');
     <jdoc:include type="message" />
     <jdoc:include type="component" />
   </div>
-  <?php if ($_GET['print'] == '1') echo '<script type="text/javascript">window.print();</script>'; ?>
+  <?php if ($print == '1') echo '<script type="text/javascript">window.print();</script>'; ?>
 </body>
 
 </html>

@@ -1,52 +1,72 @@
-<?php defined( '_JEXEC' ) or die;
+<?php
+/**
+ * @package     Joomla.Site
+ * @subpackage  Template.system
+ *
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
 
-// variables
-$app = JFactory::getApplication();
-$doc = JFactory::getDocument(); 
-$tpath = $this->baseurl.'/templates/'.$this->template;
+defined('_JEXEC') or die;
 
-?><!doctype html>
-<!--[if IEMobile]><html class="iemobile" lang="<?php echo $this->language; ?>"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="<?php echo $this->language; ?>"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="<?php echo $this->language; ?>"> <![endif]-->
-<!--[if gt IE 8]><!-->  <html class="no-js" lang="<?php echo $this->language; ?>"> <!--<![endif]-->
+if (!isset($this->error))
+{
+	$this->error = JError::raiseWarning(404, JText::_('JERROR_ALERTNOAUTHOR'));
+	$this->debug = false;
+}
 
+// Get language and direction
+$doc             = JFactory::getDocument();
+$this->language  = $doc->language;
+$this->direction = $doc->direction;
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-  <title><?php echo $this->error->getCode(); ?> - <?php echo $this->title; ?></title>
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /> <!-- mobile viewport optimized -->
-  <link rel="stylesheet" href="<?php echo $tpath; ?>/css/error.css?v=1">
-  <link rel="apple-touch-icon-precomposed" href="<?php echo $tpath; ?>/images/apple-touch-icon-57x57-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $tpath; ?>/images/apple-touch-icon-72x72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $tpath; ?>/images/apple-touch-icon-114x114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $tpath; ?>/images/apple-touch-icon-144x144-precomposed.png">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title><?php echo $this->error->getCode(); ?> - <?php echo htmlspecialchars($this->error->getMessage()); ?></title>
+	<link rel="stylesheet" href="<?php echo $this->baseurl; ?>/templates/system/css/error.css" type="text/css" />
+	<?php if ($this->direction == 'rtl') : ?>
+		<link rel="stylesheet" href="<?php echo $this->baseurl; ?>/templates/system/css/error_rtl.css" type="text/css" />
+	<?php endif; ?>
+	<?php $debug = JFactory::getConfig()->get('debug_lang'); ?>
+	<?php if ((defined('JDEBUG') && JDEBUG) || $debug) : ?>
+		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/cms/css/debug.css" type="text/css" />
+	<?php endif; ?>
 </head>
-
 <body>
-  <div align="center">
-    <div id="error">
-      <h1>
-        <?php echo htmlspecialchars($app->getCfg('sitename')); ?>
-      </h1>
-      <p>
-        <?php 
-          echo $this->error->getCode().' - '.$this->error->getMessage(); 
-          if (($this->error->getCode()) == '404') {
-            echo '<br />';
-            echo JText::_('JERROR_LAYOUT_REQUESTED_RESOURCE_WAS_NOT_FOUND');
-          }
-        ?>
-      </p>
-      <p>
-        <?php echo JText::_('JERROR_LAYOUT_GO_TO_THE_HOME_PAGE'); ?>: 
-        <a href="<?php echo $this->baseurl; ?>/"><?php echo JText::_('JERROR_LAYOUT_HOME_PAGE'); ?></a>.
-      </p>
-      <?php // render module mod_search
-        $module = new stdClass();
-        $module->module = 'mod_search';
-        echo JModuleHelper::renderModule($module);
-      ?>
-    </div>
-  </div>
-</body>
+<div class="error">
+	<div id="outline">
+		<div id="errorboxoutline">
+			<div id="errorboxheader"><?php echo $this->error->getCode(); ?> - <?php echo htmlspecialchars($this->error->getMessage()); ?></div>
+			<div id="errorboxbody">
+				<p><strong><?php echo JText::_('JERROR_LAYOUT_NOT_ABLE_TO_VISIT'); ?></strong></p>
+				<ol>
+					<li><?php echo JText::_('JERROR_LAYOUT_AN_OUT_OF_DATE_BOOKMARK_FAVOURITE'); ?></li>
+					<li><?php echo JText::_('JERROR_LAYOUT_SEARCH_ENGINE_OUT_OF_DATE_LISTING'); ?></li>
+					<li><?php echo JText::_('JERROR_LAYOUT_MIS_TYPED_ADDRESS'); ?></li>
+					<li><?php echo JText::_('JERROR_LAYOUT_YOU_HAVE_NO_ACCESS_TO_THIS_PAGE'); ?></li>
+					<li><?php echo JText::_('JERROR_LAYOUT_REQUESTED_RESOURCE_WAS_NOT_FOUND'); ?></li>
+					<li><?php echo JText::_('JERROR_LAYOUT_ERROR_HAS_OCCURRED_WHILE_PROCESSING_YOUR_REQUEST'); ?></li>
+				</ol>
+				<p><strong><?php echo JText::_('JERROR_LAYOUT_PLEASE_TRY_ONE_OF_THE_FOLLOWING_PAGES'); ?></strong></p>
 
+				<ul>
+					<li><a href="<?php echo $this->baseurl; ?>/index.php" title="<?php echo JText::_('JERROR_LAYOUT_GO_TO_THE_HOME_PAGE'); ?>"><?php echo JText::_('JERROR_LAYOUT_HOME_PAGE'); ?></a></li>
+				</ul>
+
+				<p><?php echo JText::_('JERROR_LAYOUT_PLEASE_CONTACT_THE_SYSTEM_ADMINISTRATOR'); ?>.</p>
+				<div id="techinfo">
+					<p><?php echo htmlspecialchars($this->error->getMessage()); ?></p>
+					<p>
+						<?php if ($this->debug) :
+							echo $this->renderBacktrace();
+						endif; ?>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
 </html>

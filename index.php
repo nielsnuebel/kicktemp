@@ -1,38 +1,31 @@
 <?php defined( '_JEXEC' ) or die; 
 
-include_once JPATH_THEMES . '/' . $this->template . '/logic.php'; // load logic.php
-include_once JPATH_THEMES . '/' . $this->template . '/include/kickmodulrender.php'; // load logic.php
+include_once JPATH_THEMES . '/' . $this->template . '/magic.php'; // load magic.php
 
-//Alternativ to <jdoc:include type="modules" name="top" style="html5"/> use PHP echo kickstartmodul('top',kickstartmodul,12);
 
-//Set Component Grid CSS
 $contentclass = "col-md-12";
-if ($this->countModules('sidebar-a') or  $this->countModules('sidebar-b')) $contentclass = "col-md-8";
-if ($this->countModules('sidebar-a') and $this->countModules('sidebar-b')) $contentclass = "col-md-4";
-
+if ($this->countModules('sidebar-a') or  $this->countModules('sidebar-b')) $contentclass = $this->params->get('content-2-col','col-md-8');
+if ($this->countModules('sidebar-a') and $this->countModules('sidebar-b')) $contentclass = $this->params->get('content-3-col','col-md-4');
+$sidebar_a = $this->params->get('sidebar-a','col-md-4');
+$sidebar_b = $this->params->get('sidebar-b','col-md-4');
 ?>
 
 <!doctype html>
 <!--[if IEMobile]><html class="iemobile" lang="<?php echo $this->language; ?>"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8" lang="<?php echo $this->language; ?>"> <![endif]-->
 <!--[if gt IE 8]><!-->  <html class="no-js" lang="<?php echo $this->language; ?>"> <!--<![endif]-->
-
 <head>
 	<?php if (!$this->params->get('meta-viewport')):?>
   		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<?php endif; ?>
 	<jdoc:include type="head" />
-  	<link rel="apple-touch-icon-precomposed" href="<?php echo $tpath; ?>/images/apple-touch-icon-57x57-precomposed.png">
-  	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $tpath; ?>/images/apple-touch-icon-72x72-precomposed.png">
-  	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $tpath; ?>/images/apple-touch-icon-114x114-precomposed.png">
-  	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $tpath; ?>/images/apple-touch-icon-144x144-precomposed.png">
-  	<!--[if lte IE 8]>
-    	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    	<?php if ($pie==1) : ?>
-      		<style>
-        		{behavior:url(<?php echo $tpath; ?>/js/PIE.htc);}
-      		</style>
-    	<?php endif; ?>
+	<link rel="apple-touch-icon-precomposed" href="<?php echo $tpath; ?>/images/apple-touch-icon-57x57-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $tpath; ?>/images/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $tpath; ?>/images/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $tpath; ?>/images/apple-touch-icon-144x144-precomposed.png">
+  	<!--[if lte IE 9]>
+    	<script src="<?php echo $tpath; ?>/js/html5.js"></script>
+    	<script src="<?php echo $tpath; ?>/js/respond.js"></script>
   	<![endif]-->
     <?php if ($this->params->get('googleanalytics') && $this->params->get('googleanalyticscode')!='') : ?>
         <!-- GOOGLEANAYLTICS -->
@@ -71,129 +64,7 @@ if ($this->countModules('sidebar-a') and $this->countModules('sidebar-b')) $cont
     ?>
 </head>
   
-<body class="<?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('page')).' '.$active->alias.' '.$pageclass; ?>">
-
-<div class="container">
-    <?php if ($this->countModules('logo')): ?>
-        <!-- Logo -->
-        <div class="row logo">
-            <jdoc:include type="modules" name="logo" style="html5"/>
-        </div><!-- div.row -->
-    <?php endif;?>
-
-    <!-- RESPONSIVE MENU-->
-    <?php if ($this->countModules('menu')): ?>
-		<nav class="navbar navbar-default" role="navigation">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-
-				<a class="navbar-brand" href="<?php echo $this->baseurl; ?>/"><?php echo $app->getCfg('sitename'); ?></a>
-			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<jdoc:include type="modules" name="menu"/>
-				<jdoc:include type="modules" name="search" />
-			</div><!-- /.navbar-collapse -->
-	    </nav>
-    <?php endif;?>
-
-    <?php if ($this->countModules('top')): ?>
-        <!-- TOP -->
-        <div class="row top">
-            <jdoc:include type="modules" name="top" style="html5"/>
-        </div><!-- div.row -->
-    <?php endif;?>
-
-    <!-- CONTENT -->
-    <div class="content">
-	    <div class="row">
-            <?php if ($this->countModules('sidebar-a')): ?>
-			<div class="col-md-4 col-lg-4 sidebar-a">
-                <div class="row">
-                    <jdoc:include type="modules" name="sidebar-a" style="html5"/>
-                </div>
-			</div><!-- .sidebar-a -->
-		    <?php endif;?>
-
-		    <div class="<?php echo $contentclass; ?> middle">
-                <?php if ($this->countModules('inner-top')): ?>
-				<div class="row inner-top">
-                    <jdoc:include type="modules" name="inner-top" style="html5"/>
-				</div><!-- .inner-top -->
-			    <?php endif;?>
-
-                <jdoc:include type="message" />
-                <!-- Component Start -->
-                <jdoc:include type="component" />
-                <!-- Component End -->
-
-                <?php if ($this->countModules('inner-bottom')): ?>
-				<div class="row inner-bottom">
-                    <jdoc:include type="modules" name="inner-bottom" style="html5"/>
-				</div><!-- .inner-bottom -->
-			    <?php endif;?>
-		    </div><!-- .middle -->
-
-            <?php if ($this->countModules('sidebar-b')): ?>
-                <div class="col-md-4 col-lg-4 sidebar-b">
-                    <div class="row">
-                        <jdoc:include type="modules" name="sidebar-b" style="html5"/>
-                    </div>
-                </div><!-- .sidebar-b -->
-            <?php endif;?>
-	    </div><!-- div.row -->
-    </div><!-- div.content -->
-
-    <?php if ($this->countModules('bottom')): ?>
-    <!-- BOTTOM -->
-	<div class="row bottom">
-        <jdoc:include type="modules" name="bottom" style="html5"/>
-    </div><!-- div.row -->
-    <?php endif;?>
-
-    <?php if ($this->countModules('footer')): ?>
-    <!-- FOOTER -->
-    <footer>
-        <div class="row footer">
-            <jdoc:include type="modules" name="footer" style="html5"/>
-        </div><!-- .footer -->
-    </footer>
-    <?php endif;?>
-
-    <div class="row copyright">
-        <div class="col-md-12 col-lg-12"><?php echo '&copy; '.date('Y').' - '.$app->getCfg('sitename');?></div>
-    </div><!-- .copyright -->
-</div><!-- .container -->
-
-  	<jdoc:include type="modules" name="debug" />
-
-  	<?php if ($this->params->get('bootstrap')==1 && $this->params->get('bootstrapmenu')) : ?>
-	<script type="text/javascript">
-		(function($){
-			$(document).ready(function(){
-				// dropdown
-			  	$('nav .menu > .deeper').addClass('dropdown');
-			  	$('nav .menu > .deeper > a').addClass('dropdown-toggle');
-				//$('nav .menu > .deeper > a').addClass('dropdown-toggle disabled'); allow click
-				$('nav .menu > .deeper > a').attr('data-toggle', 'dropdown');
-				$('nav .menu > .deeper > a').attr('href', '#');
-			  	$('nav .menu > .deeper > a').append('<span  class="caret"></span>');
-			  	$('nav .menu > .deeper > ul').addClass('dropdown-menu');
-			});
-	  	})(jQuery);
-	</script>
-  	<?php endif; ?>
-
-    <?php if ($this->params->get('holder')==1) : ?>
-        <script src="<?php echo $tpath.'/js/holder.js';?>"></script>
-    <?php endif; ?>
-</body>
+	<?php require_once __DIR__ . '/index_' . $pagetype . '.php'; ?>
 
 </html>
 
