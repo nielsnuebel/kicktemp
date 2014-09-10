@@ -107,10 +107,12 @@
 
 	<?php $pos='bottom'; ?>
 	<?php if ($this->countModules($pos)): ?>
-		<!-- <?php echo $pos; ?> -->
-		<div class="row <?php echo $pos; ?>">
-			<jdoc:include type="modules" name="<?php echo $pos; ?>" style="html5"/>
-		</div><!-- div.row -->
+		<div class="container">
+			<!-- <?php echo $pos; ?> -->
+			<div class="row <?php echo $pos; ?>">
+				<jdoc:include type="modules" name="<?php echo $pos; ?>" style="html5"/>
+			</div><!-- div.row -->
+		</div>
 	<?php endif;?>
 
 	<?php $pos='footer'; ?>
