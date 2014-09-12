@@ -92,7 +92,7 @@
                 <field  name="showsystemoutput"
                         type="radio"
                         class="btn-group"
-                        default="1"
+                        default="0"
                         label="TPL_KICKTEMP_PARAMETER_SHOWSYSTEMOUTPUT_LABEL"
                         description="TPL_KICKTEMP_PARAMETER_SHOWSYSTEMOUTPUT_DESC"
                         >
@@ -116,7 +116,7 @@
                 <field  name="pagetype"
                         type="radio"
                         class="btn-group"
-                        default="0"
+                        default="multipage"
                         label="TPL_KICKTEMP_PARAMETER_PAGETYPE_LABEL"
                         description="TPL_KICKTEMP_PARAMETER_PAGETYPE_DESC"
                         >

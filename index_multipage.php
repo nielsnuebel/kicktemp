@@ -73,7 +73,7 @@
 							</div><!-- div.row -->
 						<?php endif;?>
 
-						<?php if ($showsystemoutput) : ?>
+						<?php if (!$showsystemoutput) : ?>
 							<jdoc:include type="message" />
 							<!-- Component Start -->
 							<jdoc:include type="component" />

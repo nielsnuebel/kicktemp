@@ -1,14 +1,4 @@
 <body class="<?php echo (($isFrontpage) ? ('front') : ('page')).' '.$active_alias.' '.$pageclass; ?>">
-<?php $pos='onepage'; ?>
-<?php if ($this->countModules($pos)): ?>
-	<div class="container">
-		<!-- <?php echo $pos; ?> -->
-		<div class="row <?php echo $pos; ?>">
-			<jdoc:include type="modules" name="<?php echo $pos; ?>" style="html5"/>
-			<div class="clearfix"></div>
-		</div><!-- div.row -->
-	</div>
-<?php endif;?>
 
 <?php $pos='logo'; ?>
 <?php if ($this->countModules($pos)): ?>
@@ -44,6 +34,11 @@
 			</div><!--/.container-fluid -->
 		</nav>
 	</div>
+<?php endif;?>
+
+<?php $pos='onepage'; ?>
+<?php if ($this->countModules($pos)): ?>
+	<jdoc:include type="modules" name="<?php echo $pos; ?>" style="html5"/>
 <?php endif;?>
 
 <?php $pos='top'; ?>
@@ -83,7 +78,7 @@
 						</div><!-- div.row -->
 					<?php endif;?>
 
-					<?php if ($showsystemoutput) : ?>
+					<?php if (!$showsystemoutput) : ?>
 						<jdoc:include type="message" />
 						<!-- Component Start -->
 						<jdoc:include type="component" />
@@ -114,6 +109,11 @@
 		</div><!-- div.contentwrapper -->
 	</div><!-- div.container -->
 <?php endif; ?>
+
+<?php $pos='onepagebottom'; ?>
+<?php if ($this->countModules($pos)): ?>
+	<jdoc:include type="modules" name="<?php echo $pos; ?>" style="html5"/>
+<?php endif;?>
 
 <?php $pos='bottom'; ?>
 <?php if ($this->countModules($pos)): ?>
