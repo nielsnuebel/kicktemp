@@ -58,6 +58,7 @@
 	
 	<positions><!-- define the positions for modules here -->
         <position>onepage</position>
+        <position>onepagebottom</position>
         <position>logo</position>
         <position>menu</position>
         <position>search</position>
