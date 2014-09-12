@@ -6,6 +6,9 @@ body {
 	height: 100%;
 	position: relative;
 }
+.inline-block {
+	display: inline-block;
+}
 
 /* Media Queries
 *********************************************/
