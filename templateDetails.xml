@@ -15,13 +15,15 @@
 		<h2>Module positions</h2>
 		<ol>
             <li>onepage</li>
+            <li>onepage-bottom</li>
             <li>logo</li>
             <li>menu</li>
+            <li>search</li>
             <li>top</li>
-            <li>sidebar-a</li>
             <li>inner-top</li>
-            <li>inner-bottom</li>
+            <li>sidebar-a</li>
             <li>sidebar-b</li>
+            <li>inner-bottom</li>
             <li>bottom</li>
             <li>footer</li>
             <li>debug</li>
@@ -66,7 +68,14 @@
         <position>footer</position>
         <position>debug</position>
 	</positions>
-	
+    <languages folder="language">
+        <language tag="de-DE">de-DE/de-DE.tpl_kicktemp.ini</language>
+        <language tag="de-DE">de-DE/de-DE.tpl_kicktemp.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.tpl_kicktemp.ini</language>
+        <language tag="en-GB">en-GB/en-GB.tpl_kicktemp.sys.ini</language>
+        <language tag="en-GB">fr-FR/fr-FR.tpl_kicktemp.ini</language>
+        <language tag="en-GB">fr-FR/fr-FR.tpl_kicktemp.sys.ini</language>
+    </languages>
 	<config><!-- no need to change -->
 		<fields name="params">
 
