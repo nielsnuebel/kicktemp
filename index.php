@@ -1,6 +1,6 @@
 <?php defined( '_JEXEC' ) or die; 
 
-include_once JPATH_THEMES . '/' . $this->template . '/magic.php'; // load magic.php
+include_once JPATH_THEMES . '/' . $this->template . '/conwebia.php'; // load magic.php
 
 
 $contentclass = "col-md-12";
@@ -63,7 +63,7 @@ $sidebar_b = $this->params->get('sidebar-b','col-md-4');
     endif;
     ?>
 </head>
-  
+
 	<?php require_once __DIR__ . '/index_' . $pagetype . '.php'; ?>
 
 </html>
