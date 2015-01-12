@@ -1,0 +1,22 @@
+{
+  "name": "kicktemp",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": ">= 3.3.1",
+    "fontawesome": ">= 4.2.0",
+    "jquery": ">= 1.11.1"
+  },
+  "ignore": [
+    "**/.*",
+    "assets",
+    "node_modules",
+    "bower_components",
+    "docs",
+    "vendor",
+    "server.js",
+    "composer.json",
+    "index.html"
+  ]
+}
+

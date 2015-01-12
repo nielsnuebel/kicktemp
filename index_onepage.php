@@ -141,28 +141,3 @@
 		<div class="col-md-12 col-lg-12"><?php echo '&copy; '.date('Y').' - '.$app->getCfg('sitename');?></div>
 	</div><!-- .copyright -->
 </div><!-- .container -->
-
-<jdoc:include type="modules" name="debug" />
-
-
-<?php if ($this->params->get('bootstrap')==1 && $this->params->get('bootstrapmenu')) : ?>
-	<script type="text/javascript">
-		(function($){
-			$(document).ready(function(){
-				// dropdown
-				$('nav .menu > .deeper').addClass('dropdown');
-				//$('nav .menu > .deeper > a').addClass('dropdown-toggle');
-				$('nav .menu > .deeper > a').addClass('dropdown-toggle disabled');
-				//$('nav .menu > .deeper > a').attr('data-toggle', 'dropdown');
-				//$('nav .menu > .deeper > a').attr('href', '#');
-				//$('nav .menu > .deeper > a').append('<span  class="caret"></span>');
-				$('nav .menu > .deeper > ul').addClass('dropdown-menu');
-			});
-		})(jQuery);
-	</script>
-<?php endif; ?>
-
-<?php if ($this->params->get('holder')==1) : ?>
-	<script src="<?php echo $tpath.'/js/holder.js';?>"></script>
-<?php endif; ?>
-</body>
