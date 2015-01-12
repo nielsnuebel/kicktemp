@@ -81,8 +81,8 @@
                         type="radio"
                         class="btn-group"
                         default="0"
-                        label="TPL_INSIGHT_PARAMETER_SHOWSYSTEMOUTPUT_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_SHOWSYSTEMOUTPUT_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_SHOWSYSTEMOUTPUT_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_SHOWSYSTEMOUTPUT_DESC"
                         >
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
@@ -93,8 +93,8 @@
                         type="radio"
                         class="btn-group"
                         default="0"
-                        label="TPL_INSIGHT_PARAMETER_HIDECONTENTWRAPPER_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_HIDECONTENTWRAPPER_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_HIDECONTENTWRAPPER_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_HIDECONTENTWRAPPER_DESC"
                         >
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
@@ -105,11 +105,11 @@
                         type="radio"
                         class="btn-group"
                         default="multipage"
-                        label="TPL_INSIGHT_PARAMETER_PAGETYPE_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_PAGETYPE_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_PAGETYPE_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_PAGETYPE_DESC"
                         >
-                    <option value="onepage">TPL_INSIGHT_PARAMETER_ONEPAGE</option>
-                    <option value="multipage">TPL_INSIGHT_PARAMETER_MULTIPAGE</option>
+                    <option value="onepage">TPL_KICKTEMP_PARAMETER_ONEPAGE</option>
+                    <option value="multipage">TPL_KICKTEMP_PARAMETER_MULTIPAGE</option>
                 </field>
 
                 <!-- Holder.js-->
@@ -117,8 +117,8 @@
                         type="radio"
                         class="btn-group"
                         default="0"
-                        label="TPL_INSIGHT_PARAMETER_HOLDER_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_HOLDER_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_HOLDER_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_HOLDER_DESC"
                         >
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
@@ -131,8 +131,8 @@
                         class=""
                         type="text"
                         default="col-md-4"
-                        label="TPL_INSIGHT_PARAMETER_SIDEBAR_A_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_SIDEBAR_A_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_SIDEBAR_A_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_SIDEBAR_A_DESC"
                         />
 
                 <!-- SIDEBAR B -->
@@ -140,8 +140,8 @@
                         class=""
                         type="text"
                         default="col-md-4"
-                        label="TPL_INSIGHT_PARAMETER_SIDEBAR_B_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_SIDEBAR_B_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_SIDEBAR_B_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_SIDEBAR_B_DESC"
                         />
 
                 <!-- CONTENT 1 -->
@@ -158,8 +158,8 @@
                         class=""
                         type="text"
                         default="col-md-8"
-                        label="TPL_INSIGHT_PARAMETER_CONTENT_2_COL_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_CONTENT_2_COL_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_CONTENT_2_COL_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_CONTENT_2_COL_DESC"
                         />
 
                 <!-- CONTENT 3 -->
@@ -167,8 +167,8 @@
                         class=""
                         type="text"
                         default="col-md-4"
-                        label="TPL_INSIGHT_PARAMETER_CONTENT_3_COL_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_CONTENT_3_COL_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_CONTENT_3_COL_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_CONTENT_3_COL_DESC"
                         />
             </fieldset>
 
@@ -178,8 +178,8 @@
                         type="radio"
                         class="btn-group"
                         default="0"
-                        label="TPL_INSIGHT_PARAMETER_GOOGLEANALYTICS_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_GOOGLEANALYTICS_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_GOOGLEANALYTICS_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_GOOGLEANALYTICS_DESC"
                         >
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
@@ -190,8 +190,8 @@
                         class=""
                         type="text"
                         default=""
-                        label="TPL_INSIGHT_PARAMETER_GOOGLEANALYTICS_CODE_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_GOOGLEANALYTICS_CODE_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_GOOGLEANALYTICS_CODE_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_GOOGLEANALYTICS_CODE_DESC"
                         />
             </fieldset>
 
@@ -201,8 +201,8 @@
                         class=""
                         type="text"
                         default=""
-                        label="TPL_INSIGHT_PARAMETER_GOOGLEFONT_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_GOOGLEFONT_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_GOOGLEFONT_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_GOOGLEFONT_DESC"
                         />
             </fieldset>
 
@@ -212,8 +212,8 @@
                         type="radio"
                         class="btn-group"
                         default="1"
-                        label="TPL_INSIGHT_PARAMETER_DISABLEJS_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_DISABLEJS_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_DISABLEJS_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_DISABLEJS_DESC"
                         >
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
@@ -222,8 +222,8 @@
                 <!-- JavaScript Files -->
                 <field  name="fnjs"
                         type="textarea"
-                        label="TPL_INSIGHT_PARAMETER_FNJS_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_FNJS_LABEL"
+                        label="TPL_KICKTEMP_PARAMETER_FNJS_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_FNJS_LABEL"
                         cols="30"
                         default="mootools-core.js,caption.js,media/jui/js/bootstrap.min.js"
                         rows="4"
@@ -234,8 +234,8 @@
                         type="radio"
                         class="btn-group"
                         default="0"
-                        label="TPL_INSIGHT_PARAMETER_DISABLECSS_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_DISABLECSS_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_DISABLECSS_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_DISABLECSS_DESC"
                         >
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
@@ -244,8 +244,8 @@
                 <!-- CSS Files -->
                 <field  name="fncss"
                         type="textarea"
-                        label="TPL_INSIGHT_PARAMETER_FNCSS_LABEL"
-                        description="TPL_INSIGHT_PARAMETER_FNCSS_DESC"
+                        label="TPL_KICKTEMP_PARAMETER_FNCSS_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_FNCSS_DESC"
                         cols="30"
                         rows="4"
                         />
