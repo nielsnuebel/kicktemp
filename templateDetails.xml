@@ -30,15 +30,12 @@
 	
 	<files><!-- no need to change -->
 		<folder>assets</folder>
-		<folder>bower_components</folder>
 		<folder>css</folder>
-		<folder>fonts</folder>
 		<folder>grunt</folder>
 		<folder>html</folder>
 		<folder>images</folder>
 		<folder>js</folder>
 		<folder>language</folder>
-		<folder>node_modules</folder>
 		<filename>.bowerrc</filename>
 		<filename>.gitignore</filename>
 		<filename>bower.json</filename>
@@ -46,7 +43,6 @@
 		<filename>error.php</filename>
 		<filename>favicon.ico</filename>
 		<filename>Gruntfile.js</filename>
-		<filename>gulpfile.js</filename>
 		<filename>index.php</filename>
 		<filename>index_multipage.php</filename>
 		<filename>index_onepage.php</filename>
@@ -82,7 +78,7 @@
                 <field  name="filename"
                         class=""
                         type="text"
-                        default="kicktemp"
+                        default="kicktemp.min"
                         label="TPL_KICKTEMP_PARAMETER_FILENAME_LABEL"
                         description="TPL_KICKTEMP_PARAMETER_FILENAME_DESC"
                         />
