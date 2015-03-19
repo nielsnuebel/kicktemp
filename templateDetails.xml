@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.1" type="template" client="site">
-	
 	<name>kicktemp</name>
-	<creationDate>12.01.2015</creationDate>
+	<creationDate>19 March 2015</creationDate>
 	<author>Niels Nübel</author>
-	<copyright>Copyright © 2015 nn-medienagentur.de</copyright>
-	<authorEmail>info@nn-medienagentur.de</authorEmail>
-	<authorUrl>http://www.nn-medienagentur.de</authorUrl>
+	<copyright>Copyright © 2015 niels-nuebel.de</copyright>
+	<authorEmail>niels@niels-nuebel.de</authorEmail>
+	<authorUrl>http://www.niels-nuebel.de</authorUrl>
 	<version>1.0.0</version>
 	<description><![CDATA[ 
 		<h1>KICKTEMP</h1>
@@ -26,7 +25,7 @@
             <li>footer</li>
             <li>debug</li>
 		</ol>
-		<p>Created by <a href="http://www.nn-medienagentur.de" target="_blank">NN-Medienagentur | nn-medienagentur.de</a>.</p>
+		<p>Created by <a href="http://www.niels-nuebel.de" target="_blank">Niels Nübel | niels-nuebel.de</a>.</p>
 	]]></description>
 	
 	<files><!-- no need to change -->
@@ -34,6 +33,7 @@
 		<folder>bower_components</folder>
 		<folder>css</folder>
 		<folder>fonts</folder>
+		<folder>grunt</folder>
 		<folder>html</folder>
 		<folder>images</folder>
 		<folder>js</folder>
@@ -43,38 +43,49 @@
 		<filename>.gitignore</filename>
 		<filename>bower.json</filename>
 		<filename>CHANGELOG.MD</filename>
-		<filename>component.php</filename>
 		<filename>error.php</filename>
 		<filename>favicon.ico</filename>
+		<filename>Gruntfile.js</filename>
+		<filename>gulpfile.js</filename>
 		<filename>index.php</filename>
 		<filename>index_multipage.php</filename>
 		<filename>index_onepage.php</filename>
-		<filename>offline.php</filename>
+		<filename>LICENSE</filename>
 		<filename>package.json</filename>
 		<filename>README.md</filename>
 		<filename>template_preview.png</filename>
 		<filename>template_thumbnail.png</filename>
 		<filename>templateDetails.xml</filename>
 	</files>
-	
-	<positions><!-- define the positions for modules here -->
+
+    <positions><!-- define the positions for modules here -->
         <position>logo</position>
         <position>menu</position>
         <position>search</position>
+        <position>onepage</position>
         <position>top</position>
         <position>inner-top</position>
         <position>sidebar-a</position>
         <position>sidebar-b</position>
         <position>inner-bottom</position>
         <position>bottom</position>
+        <position>onepagebottom</position>
         <position>footer</position>
         <position>debug</position>
-	</positions>
+    </positions>
 
 	<config><!-- no need to change -->
-		<fields name="params">
+		<fields name="params" addfieldpath="templates/kicktemp/nnframework/joomla/config/elements">
 
 			<fieldset name="advanced">
+                <!-- FILENAME -->
+                <field  name="filename"
+                        class=""
+                        type="text"
+                        default="kicktemp"
+                        label="TPL_KICKTEMP_PARAMETER_FILENAME_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_FILENAME_DESC"
+                        />
 
                 <!-- SHOWSYSTEMOUTPUT -->
                 <field  name="showsystemoutput"
@@ -111,21 +122,21 @@
                     <option value="onepage">TPL_KICKTEMP_PARAMETER_ONEPAGE</option>
                     <option value="multipage">TPL_KICKTEMP_PARAMETER_MULTIPAGE</option>
                 </field>
+			</fieldset>
 
-                <!-- Holder.js-->
-                <field  name="holder"
+            <fieldset name="boostrap">
+
+                <!-- SHOWSYSTEMOUTPUT -->
+                <field  name="show_caret"
                         type="radio"
                         class="btn-group"
-                        default="0"
-                        label="TPL_KICKTEMP_PARAMETER_HOLDER_LABEL"
-                        description="TPL_KICKTEMP_PARAMETER_HOLDER_DESC"
+                        default="1"
+                        label="TPL_KICKTEMP_PARAMETER_SHOWCARET_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_SHOWCARET_DESC"
                         >
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
                 </field>
-			</fieldset>
-
-            <fieldset name="boostrap">
                 <!-- SIDEBAR A -->
                 <field  name="sidebar-a"
                         class=""
@@ -205,52 +216,6 @@
                         description="TPL_KICKTEMP_PARAMETER_GOOGLEFONT_DESC"
                         />
             </fieldset>
-
-            <fieldset name="disable">
-                <!-- Disable JavaScript -->
-                <field  name="disablejs"
-                        type="radio"
-                        class="btn-group"
-                        default="1"
-                        label="TPL_KICKTEMP_PARAMETER_DISABLEJS_LABEL"
-                        description="TPL_KICKTEMP_PARAMETER_DISABLEJS_DESC"
-                        >
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-
-                <!-- JavaScript Files -->
-                <field  name="fnjs"
-                        type="textarea"
-                        label="TPL_KICKTEMP_PARAMETER_FNJS_LABEL"
-                        description="TPL_KICKTEMP_PARAMETER_FNJS_LABEL"
-                        cols="30"
-                        default="mootools-core.js,caption.js,media/jui/js/bootstrap.min.js"
-                        rows="4"
-                        />
-
-                <!-- Disable CSS -->
-                <field  name="disablecss"
-                        type="radio"
-                        class="btn-group"
-                        default="0"
-                        label="TPL_KICKTEMP_PARAMETER_DISABLECSS_LABEL"
-                        description="TPL_KICKTEMP_PARAMETER_DISABLECSS_DESC"
-                        >
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-
-                <!-- CSS Files -->
-                <field  name="fncss"
-                        type="textarea"
-                        label="TPL_KICKTEMP_PARAMETER_FNCSS_LABEL"
-                        description="TPL_KICKTEMP_PARAMETER_FNCSS_DESC"
-                        cols="30"
-                        rows="4"
-                        />
-            </fieldset>
 		</fields>
 	</config>
-	
 </extension>

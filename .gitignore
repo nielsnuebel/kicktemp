@@ -2,7 +2,7 @@
 /custom
 /dist
 /node_modules
-/bower_components
+/bower	_components
 /tools
 *.diff
 *.patch

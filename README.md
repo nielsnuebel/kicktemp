@@ -18,7 +18,7 @@ sudo npm install
 
 **3. copy fonts from source to public and copy bootstrap variables for custom.**
 ```
-gulp init
+grunt init
 ```
 
 **5. let the magic begin.**

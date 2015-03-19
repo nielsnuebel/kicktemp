@@ -8,9 +8,6 @@
  */
 
 defined('_JEXEC') or die;
-
-JHtml::_('bootstrap.tooltip');
-
 ?>
 
 <ol class="breadcrumb<?php echo $moduleclass_sfx; ?>">
