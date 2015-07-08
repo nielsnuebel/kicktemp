@@ -200,6 +200,30 @@
                         label="TPL_KICKTEMP_PARAMETER_GOOGLEANALYTICS_CODE_LABEL"
                         description="TPL_KICKTEMP_PARAMETER_GOOGLEANALYTICS_CODE_DESC"
                         />
+                        
+                <!-- GOOGLE ANALYTICS LINKZUORDNUNG-->
+                <field  name="googlelinkid"
+                        type="radio"
+                        class="btn-group"
+                        default="0"
+                        label="TPL_KICKTEMP_PARAMETER_GOOGLELINKID_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_GOOGLELINKID_DESC"
+                        >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <!-- GOOGLE ANALYTICS DISPLAYFEATURES-->
+                <field  name="googledisplayfeatures"
+                        type="radio"
+                        class="btn-group"
+                        default="0"
+                        label="TPL_KICKTEMP_PARAMETER_GOOGLEADISPLAYFEATURES_LABEL"
+                        description="TPL_KICKTEMP_PARAMETER_GOOGLEADISPLAYFEATURES_DESC"
+                        >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
             </fieldset>
 
             <fieldset name="webfonts">
