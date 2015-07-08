@@ -79,6 +79,8 @@ if ($params->get('googleanalytics') && $params->get('googleanalyticscode')!='') 
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', '<?php echo $this->params->get('googleanalyticscode');?>', 'auto');
   ga('set', 'anonymizeIp', true);
+  <?php if ($params->get('googlelinkid')) echo "ga('require', 'linkid', 'linkid.js');\n" ?>
+  <?php if ($params->get('googledisplayfeatures')) echo "ga('require', 'displayfeatures');\n" ?>
   ga('send', 'pageview');
 </script>
 <?php
