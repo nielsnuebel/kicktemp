@@ -1,9 +1,0 @@
-/.idea
-/custom
-/dist
-/node_modules
-/bower	_components
-/tools
-*.diff
-*.patch
-.DS_Store
