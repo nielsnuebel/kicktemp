@@ -1,0 +1,26 @@
+{
+  "name": "kicktemp",
+  "version": "1.0.1",
+  "homepage": "http://www.niels-nuebel.de",
+  "author": "Niels Nübel",
+  "private": true,
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/kicktemp/kicktemp/blob/master/LICENSE"
+  },
+  "devDependencies": {
+    "browser-sync": ">= 2.13.x",
+    "gulp": ">= 3.9.x",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.0.3",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-newer": "^1.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-uglify": "^1.4.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-rename": "^1.2.2"
+  }
+}

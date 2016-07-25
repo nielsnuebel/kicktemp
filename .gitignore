@@ -1,0 +1,7 @@
+/.idea/
+/vendor
+/bower_components
+/node_modules
+/assets/bower
+composer.phar
+.DS_Store
