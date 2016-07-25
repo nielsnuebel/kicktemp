@@ -118,6 +118,7 @@ else
 	}
 	?>
 </head>
+<body class="<?php echo $pageclass . ' ' . $this->language; ?>">
 <?php require_once __DIR__ . '/tpls/' . $layout; ?>
 <jdoc:include type="modules" name="debug" />
 </body>

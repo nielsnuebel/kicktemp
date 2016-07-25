@@ -5,3 +5,4 @@
 /assets/bower
 composer.phar
 .DS_Store
+/testgulpfile.js

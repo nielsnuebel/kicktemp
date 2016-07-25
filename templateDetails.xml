@@ -2,8 +2,8 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.1" type="template" client="site">
     <name>kicktemp</name>
-    <version>1.0.0</version>
-    <creationDate>19 March 2015</creationDate>
+    <version>1.0.1</version>
+    <creationDate>25 July 2016</creationDate>
     <author>Niels Nübel</author>
     <authorEmail>info@niels-nuebel.de</authorEmail>
     <authorUrl>http://www.niels-nuebel.de</authorUrl>
@@ -51,20 +51,26 @@
 
             <fieldset name="advanced">
                 <!-- CSSFILENAME -->
-                <field  name="cssfilename"
-                        class=""
-                        type="text"
-                        default="kicktemp.min.css"
-                        label="TPL_KICKTEMP_PARAMETER_CSSFILENAME_LABEL"
-                        description="TPL_KICKTEMP_PARAMETER_CSSFILENAME_DESC"
+                <field name="cssfilename"
+                       type="filelist"
+                       default="kicktemp.min.css"
+                       label="TPL_KICKTEMP_PARAMETER_CSSFILENAME_LABEL"
+                       description="TPL_KICKTEMP_PARAMETER_CSSFILENAME_DESC"
+                       directory="templates/kicktemp/css"
+                       filter="\.css"
+                       striptext="true"
+                       hide_none="true"
                 />
                 <!-- JSFILENAME -->
-                <field  name="jsfilename"
-                        class=""
-                        type="text"
-                        default="kicktemp.min.js"
-                        label="TPL_KICKTEMP_PARAMETER_JSFILENAME_LABEL"
-                        description="TPL_KICKTEMP_PARAMETER_JSFILENAME_DESC"
+                <field name="jsfilename"
+                       type="filelist"
+                       default="kicktemp.min.js"
+                       label="TPL_KICKTEMP_PARAMETER_JSFILENAME_LABEL"
+                       description="TPL_KICKTEMP_PARAMETER_JSFILENAME_DESC"
+                       directory="templates/kicktemp/js"
+                       filter="\.js"
+                       striptext="true"
+                       hide_none="true"
                 />
 
                 <!-- SHOWONFRONTPAGE -->
